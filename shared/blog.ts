@@ -1,0 +1,257 @@
+export type ContentBlock =
+  | { type: "p" | "h2" | "quote" | "callout" | "cta" | "video"; text: string; label?: string; href?: string }
+  | { type: "image"; src: string; alt: string; caption: string }
+  | { type: "steps"; title: string; items: string[] }
+  | { type: "chart"; title: string; caption: string; bars: { label: string; value: number; note: string }[] };
+
+export type BlogArticle = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  date: string;
+  readMinutes: number;
+  author: string;
+  image: string;
+  imageAlt: string;
+  featured?: boolean;
+  blocks: ContentBlock[];
+};
+
+export const categories = [
+  { slug: "legacy-planning", name: "傳承規劃", eyebrow: "LEGACY", description: "讓家族重要安排有脈絡、有選擇，也有從容交接的方式。" },
+  { slug: "asset-management", name: "資產管理", eyebrow: "ASSETS", description: "從全貌盤點到風險與持有架構，整理家庭資產的長期藍圖。" },
+  { slug: "retirement", name: "退休規劃", eyebrow: "RETIREMENT", description: "把退休生活拆解成可討論的現金流、預備金與提領節奏。" },
+  { slug: "marital-property", name: "婚姻財產權益", eyebrow: "FAMILY", description: "婚前、婚後到家庭變動，先釐清制度與每個人的重要權益。" },
+  { slug: "tax", name: "稅務服務", eyebrow: "TAX", description: "認識申報流程、家庭贈與安排與稅務風險檢視的基本功。" },
+  { slug: "insurance", name: "保險規劃", eyebrow: "PROTECTION", description: "理解保障、受益人安排、流動性與家庭資產配置之間的關係。" },
+  { slug: "guardianship", name: "意定監護", eyebrow: "CARE", description: "提早思考未來照護與重要決策的安排，讓信任與意願有依據。" },
+  { slug: "executor", name: "遺囑執行人", eyebrow: "EXECUTION", description: "從遺囑規劃到執行交接，理解流程、角色與跨專業協作。" },
+] as const;
+
+export const services = [
+  {
+    slug: "legacy-planning", category: "legacy-planning", eyebrow: "01 / 傳承規劃", title: "把家族重要的事，提早安排清楚。",
+    summary: "從家庭現況、資產組成與想傳遞的心意出發，逐步整理傳承架構與執行節奏。",
+    offerings: ["遺產稅節稅試算與策略設計", "贈與節稅與年度配置規劃", "家庭財產分配與傳承架構設計", "信託設計與資產保全機制", "遺囑規劃與執行流程設計"],
+    relatedCategories: ["legacy-planning", "tax", "executor", "insurance", "guardianship"],
+  },
+  {
+    slug: "asset-management", category: "asset-management", eyebrow: "02 / 資產管理", title: "先看見全貌，再決定資產如何同行。",
+    summary: "以家庭為單位整理不動產、現金、保單與公司資產，檢視配置、風險與持有結構。",
+    offerings: ["家庭資產配置（不動產／現金／保單／公司）", "資產風險控管與持有結構優化", "美元資產與增額配置策略", "長期家庭財務藍圖"],
+    relatedCategories: ["asset-management", "insurance", "retirement", "tax"],
+  },
+  {
+    slug: "retirement", category: "retirement", eyebrow: "03 / 退休規劃", title: "把退休願景，換算成可理解的現金流。",
+    summary: "讓生活目標、收入來源、長照與醫療預備金，放在同一張長期規劃圖上討論。",
+    offerings: ["退休現金流試算", "被動收入與資產轉現金流配置", "醫療／長照風險預備金規劃", "退休後稅務與資產提領策略"],
+    relatedCategories: ["retirement", "asset-management", "insurance", "tax"],
+  },
+  {
+    slug: "marital-property", category: "marital-property", eyebrow: "04 / 婚姻財產權益", title: "讓關係中的財產安排，有清楚的對話起點。",
+    summary: "從制度、資產來源與家庭責任出發，協助整理婚前／婚後安排及變動情境。",
+    offerings: ["婚前／婚後財產制度規劃（法定／約定）", "配偶剩餘財產分配請求權試算", "財產隔離與風險防火牆設計", "離婚／繼承時財產保障機制"],
+    relatedCategories: ["marital-property", "legacy-planning", "asset-management", "tax"],
+  },
+  {
+    slug: "tax", category: "tax", eyebrow: "05 / 稅務服務", title: "讓每一項安排，都經得起仔細檢視。",
+    summary: "整理遺產與贈與申報需求，從家庭脈絡檢視合法合規的選項與必要資料。",
+    offerings: ["遺產／贈與稅申報與諮詢", "稅務風險檢視與合法優化建議"],
+    relatedCategories: ["tax", "legacy-planning", "asset-management", "executor"],
+  },
+] as const;
+
+export const articles: BlogArticle[] = [
+  {
+    slug: "family-asset-inventory-checklist", title: "家庭資產盤點實用清單：整理不動產、現金、保單與公司資產", excerpt: "提供家庭可參考的資產盤點清單，從資料準備、欄位設計到不同資產類型的核對與更新，讓重要資訊更容易查找、交接與維護。", category: "asset-management", tags: ["家庭資產", "資產盤點", "不動產", "保單管理", "公司資產"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "桌面上的住宅模型、空白帳冊與家庭資產盤點圖",
+    blocks: [
+      { type: "p", text: "盤點不是把資料堆在一起，而是建立一份家人找得到、看得懂、需要時能交接的清冊。本篇提供可套用的欄位與流程，整理不動產、現金、保單及公司資產。" },
+      { type: "h2", text: "先把盤點範圍切小" },
+      { type: "p", text: "以家庭為單位建立主表，按資產類別分頁；已確認的先記，資料不足者標示「待確認」。每筆資料附上截至日期，避免混用不同時間的餘額或文件。" },
+      { type: "steps", title: "實際盤點 5 步驟", items: ["列清單：從帳戶、文件夾、信箱與雲端資料夾找出資產名稱，先不急著估值。", "備來源：準備權狀或契約、對帳資料、保單文件、公司持股或出資文件等核對依據。", "建檔：填入所有權人、位置、最新餘額或估值、文件位置與截至日期。", "核對：用文件名稱、編號末碼或聯絡窗口比對主表，不一致處留下註記。", "追蹤：把缺件、到期日及需通知的人列入追蹤欄，完成一項就更新狀態。"] },
+      { type: "h2", text: "建立可查找的欄位" },
+      { type: "p", text: "主表採「一列一項資產」：類別、名稱或識別描述、所有權人、共同持有人、所在地或帳戶末碼、最新餘額或估值、截至日期、文件位置、聯絡窗口、相關借款或固定支出、存取限制、更新日期與負責人。密碼不要放在主表，只記安全的存取位置與必要提示。" },
+      { type: "quote", text: "好用的清冊，不在於寫得很滿，而在於每筆都能回答：這是什麼、歸誰、文件在哪、何時再看？", label: "盤點提醒" },
+      { type: "h2", text: "四類資產逐項核對" },
+      { type: "p", text: "不動產記地址、權利人、文件、使用情形及相關貸款或管理費；現金分開記銀行存款、現金與常用支付工具，保留帳戶末碼和對帳日期。保單記公司、名稱或編號末碼、要保人、被保險人、受益人、繳費方式、續期或檢視日期。公司資產記公司名稱、持股或出資文件、文件所載權益、聯絡窗口及待確認事項，只記文件能支持的內容。" },
+      { type: "h2", text: "設定更新與保存節奏" },
+      { type: "p", text: "買賣、搬遷、帳戶或保單異動、股權變動、聯絡人更換時，記下更新日期與變動原因。定期複核餘額、到期日、文件位置與聯絡資訊；可由一人收集、另一人核對，降低單一資料來源未更新的風險。" },
+      { type: "p", text: "主表與證明文件分開管理：檔案按類別與年份命名，紙本與數位檔案保持一致；設定閱讀與編輯權限，並預留家人知道如何取得的備份。涉及隱私的內容不要用公開連結分享。" },
+      { type: "callout", label: "一般資訊提醒", text: "本文是家庭整理方法，不是稅務、法律、保險或投資的個別建議；如有權利、契約或申報疑問，請依文件向合適的專業人士確認。" },
+      { type: "cta", text: "想把清冊做成適合你家庭的版本？先從一張主表開始，再逐項補齊資料。", label: "了解資產管理服務", href: "/services/asset-management" },
+    ],
+  },
+  {
+    slug: "legacy-planning-first-meeting", title: "傳承規劃從哪開始？先整理家庭目標與待確認事項", excerpt: "第一次談傳承，不必急著做決定；先把家人的期待、目前掌握的資料與仍待釐清的問題分開整理，讓後續討論更有方向，也方便專業人士接續協作。", category: "legacy-planning", tags: ["傳承規劃", "家庭溝通", "資料整理", "專業協作"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "柔和晨光中的家庭檔案、家系線稿與筆記本",
+    blocks: [
+      { type: "p", text: "第一次家人討論傳承，重點不是當場決定誰拿什麼，而是建立可理解、可修正的共同起點。先約不被打斷的時間，說明這次只做盤點與提問，不預設答案，也不把沉默當同意；議題敏感時，先約定發言順序與保密範圍。" },
+      { type: "h2", text: "先把期待說清楚" },
+      { type: "p", text: "請每位重要家人寫下三件事：希望守住的價值、最在意的生活安排、最擔心的情況。期待可能是維持居住穩定、照顧家人、讓事業延續或減少誤會。這些是討論方向，不是既成承諾；先並列不同聲音，再討論差異。" },
+      { type: "h2", text: "把已知事實與未解問題分開" },
+      { type: "p", text: "另一張表只記可核對的事實：家庭成員、資產及負債類別、持有名義、重要契約、企業或不動產管理情形、文件保管人。無法確認就標成「待查」，不要憑印象補齊。再把問題分成家庭共識、法律文件、稅務會計、地政登記與帳務執行，避免把猜測當結論。" },
+      { type: "h2", text: "資料整理要能被專業人士讀懂" },
+      { type: "steps", title: "第一次討論前的整理步驟", items: ["列出參與者、家庭目標與暫不處理的事項。", "按人、財產、負債、契約、事業建立文件清單。", "標示已確認、待補件或需專業判斷，留下來源。", "彙整家人分歧，改寫成可討論的問題。", "安排諮詢順序，確認資料提供方式與保密需求。"] },
+      { type: "quote", text: "好的第一次會議，不是把答案說完，而是讓每個人知道已知什麼、未知什麼，以及下一步要向誰確認。", label: "編輯觀點" },
+      { type: "h2", text: "形成跨專業問題清單" },
+      { type: "p", text: "問題清單應以家庭決策為中心，而不是先假定某一種工具。可請律師確認文件、權利義務與意願如何表達；請會計師檢視資料、帳務與需計算的項目；涉及不動產時，詢問地政士（代書）需要的權利資料、登記資訊與流程；若帳務或企業紀錄分散，向記帳士確認應補哪些帳冊與憑證。每題註明背景、已知資料、希望得到的判斷，以及需要家人決定的部分。" },
+      { type: "p", text: "會議結束前，把問題分成「家庭確認」「待補文件」「交由專業分析」三欄，指定負責人與回覆期限，並記下仍有歧異的地方。之後用同一份表更新，不只靠口頭轉述；涉及隱私時，可另存受限閱覽的資料。當期待、資料與問題分開，專業意見才更容易對準真正要處理的事項。" },
+      { type: "callout", label: "一般資訊", text: "本文提供傳承討論的整理方法，屬一般資訊，非個別法律或稅務建議；實際安排仍應依家庭情況向適合的專業人士確認。" },
+      { type: "cta", text: "想把家庭目標與待確認事項整理成下一步？", label: "了解傳承規劃服務", href: "/services/legacy-planning" },
+    ],
+  },
+  {
+    slug: "retirement-cashflow-checklist", title: "退休現金流怎麼規劃？整理收入、支出與預備金清單", excerpt: "把家庭退休後的收入起點、支出類型、醫療長照預備與待確認假設放進同一份表，定期更新，讓討論更具體、調整更有依據。", category: "retirement", tags: ["退休規劃", "現金流", "家庭理財", "醫療長照", "預備金"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-3.webp", imageAlt: "晨光照進面向花園與遠山的安靜陽台",
+    blocks: [
+      { type: "h2", text: "先定義整理表的範圍" },
+      { type: "p", text: "先以家庭為單位，決定這份表要涵蓋哪些人、哪些帳戶與哪些生活安排。每一筆資料都標註來源、估計或已確認的狀態、更新日期，以及由誰負責補充。表格的目的不是做出一次性的預測，而是把收入、支出與風險放在同一個畫面，方便家人定期討論。" },
+      { type: "h2", text: "收入來源與開始時點" },
+      { type: "p", text: "收入欄位可逐項記錄來源、預計開始日、發放頻率、可使用的金額與終止或變動條件。退休金、租賃收入、工作或接案收入，以及既有資產產生的現金流，都應分開列示，不要只填一個合計數。尚未確定的項目，寫明需要確認的文件、日期或條件，並標記為待確認。" },
+      { type: "steps", title: "家庭整理表的建立與更新步驟", items: ["盤點所有可能的收入來源，補上開始時點與發放頻率。", "把支出依固定、彈性與不定期三類分欄記錄。", "另外建立醫療、長照、居住調整與家人支援的預備欄。", "為每項假設註明依據、負責確認的人與下次檢視日期。", "定期對照實際收支，保留變動原因並更新後續安排。"] },
+      { type: "h2", text: "固定、彈性與不定期支出" },
+      { type: "p", text: "固定支出是日常生活中較難立即改變的項目，例如居住、基本帳單與必要服務；彈性支出可隨生活方式調整，例如休閒、餐飲與交通；不定期支出則包括修繕、家電更換、贈與或搬遷等偶發事項。分開記錄後，家庭才能看出哪些是基本需求、哪些可以延後，並為偶發支出預留位置。" },
+      { type: "h2", text: "醫療長照預備與待確認假設" },
+      { type: "p", text: "預備欄不只寫一個總額，也可拆成門診與住院、照護安排、輔具或居家調整、陪同與交通，以及家人支援等情境。同步記下目前已知的保障、可使用的資源與尚未確認的條件，但不要把不確定的給付或支援直接當成收入。對於健康、居住地、照顧者與家庭分工等假設，最好逐項標示可能變化。" },
+      { type: "quote", text: "整理表不是對未來下定論，而是把已知、未知與需要決定的事分開。", label: "規劃提醒" },
+      { type: "h2", text: "讓表格成為可持續更新的工具" },
+      { type: "p", text: "每次檢視時，先更新實際收入與支出，再處理生活事件帶來的變化，例如工作結束、居住調整、家庭成員需要照顧，或醫療狀況改變。保留修改日期與原因，家人比較容易理解前後差異，也能及早發現某些資料需要重新確認。這樣的紀錄比追求一次填得完美，更適合長期使用。" },
+      { type: "callout", label: "一般資訊", text: "本文提供整理退休現金流的通用方法，非個別投資或稅務建議；實際安排請按家庭情況另行確認。" },
+      { type: "cta", text: "想把家庭退休現金流整理成可持續更新的表格，可從退休規劃服務開始了解。", label: "閱讀退休規劃服務", href: "/services/retirement" },
+    ],
+  },
+  {
+    slug: "guardianship-long-term-care-conversation", title: "意定監護與長照準備：家人可先討論的四件事", excerpt: "從照護偏好、信任分工、資訊交接到資金與家庭支持，家人可趁狀態穩定時把重要想法說開，讓未來協助更貼近本人意願。", category: "guardianship", tags: ["意定監護", "長照準備", "家庭對話", "照護安排"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "象徵照護意願與家庭安排的文件和手寫筆記",
+    blocks: [
+      { type: "p", text: "談意定監護，不只是在文件上安排一個名字，更重要的是先理解本人希望怎樣生活、誰能在需要時陪伴，以及家人如何分擔。趁彼此狀態穩定時開口，目的不是預設最壞情況，而是把尊重與選擇留在家庭討論裡。" },
+      { type: "h2", text: "一、先談照護偏好：什麼樣的日子算安心？" },
+      { type: "p", text: "可以從熟悉的生活開始：希望住在原本的家、與親友同住，或接受其他照護安排？對飲食、作息、個人空間與生活習慣，有哪些不能忽略的在意？也可請本人說說「不舒服時最希望家人怎麼陪」。重點不是一次得到完整答案，而是記下想法，日後隨情況變化再更新。" },
+      { type: "h2", text: "二、談信任與協助角色：誰做什麼？" },
+      { type: "p", text: "與本人確認最信任、最容易溝通的人，也把陪同、聯絡、整理資訊、協助日常等角色分開討論。主要協助者不必獨自承擔，家人可約定替補人選與聯絡方式，並說明哪些事需先和本人商量。若看法不同，先聽原因，再以本人意願作為對話中心。" },
+      { type: "h2", text: "三、做重要資訊交接：讓需要時找得到" },
+      { type: "p", text: "可整理一份容易更新的生活與聯絡清單，放入重要親友、日常作息、照護偏好、常用服務、文件存放位置，以及本人希望誰知道哪些事。先討論保管方式與可接觸的人，尊重隱私，並在內容改變時通知相關家人。" },
+      { type: "quote", text: "真正的準備，不是替家人預先決定一切，而是讓本人想被怎樣對待，有機會被聽見、被記下，也被持續尊重。", label: "家庭對話提醒" },
+      { type: "h2", text: "四、談資金與家庭支持：把可行的幫忙說具體" },
+      { type: "p", text: "長期照護可能牽涉交通、餐食、居家協助與休息替代等支出與安排。家人可先盤點能提供的時間、費用與情緒支持，再討論哪些由家庭負擔、哪些需要另找資源；不要只問「誰來照顧」，也要問「誰能陪主要照顧者休息」。若涉及資產、帳務或文件效力，應依本人情況向相應專業人員確認。" },
+      { type: "callout", label: "一般資訊提醒", text: "本文提供家庭對話的整理方向，屬一般資訊，非個別法律或醫療建議。法律文件的效力，以及醫療照護決策的適用方式，請依當事人情況向相應專業人員確認。" },
+      { type: "h2", text: "把討論變成可以走下去的習慣" },
+      { type: "p", text: "一次談不完很正常。選在安靜、不趕時間的時段，先取得本人同意再記錄，並允許暫停或改天續談。用小步驟留下可共同查看的版本，之後依本人意願和家庭狀況再回頭更新。" },
+      { type: "steps", title: "家庭對話的五個步驟", items: ["先問本人現在最在意的生活與照護選擇。", "分別確認信任對象、協助角色與替補安排。", "整理必要資訊，約定保管、更新與隱私範圍。", "盤點時間、費用及照顧者休息等家庭支持。", "定期回看內容；若意願或家庭狀況改變，就重新討論並尋求適切專業確認。"] },
+      { type: "p", text: "當家人把抽象擔心轉成具體、可調整的對話，照護準備就不只是某一人的責任，也能成為共同守護本人選擇的方式。" },
+      { type: "cta", text: "想進一步整理意定監護與家庭照護方向？了解相關服務與討論方式。", label: "了解意定監護主題", href: "/services/guardianship" },
+    ],
+  },
+  {
+    slug: "family-legacy-planning", title: "家族傳承，不必等到申報那一天才開始", excerpt: "傳承規劃真正的起點，是先理解家庭成員、資產位置與彼此期待，再安排需要跨專業討論的問題。", category: "legacy-planning", tags: ["傳承架構", "家庭對話", "遺囑規劃"], date: "2026-10-08", readMinutes: 7, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "柔和晨光中的家庭檔案、家系線稿與筆記本", featured: true,
+    blocks: [
+      { type: "p", text: "談到傳承，許多人第一個想到的是稅務申報。但真正影響安排能否順利落實的，往往還包括資產分散在哪裡、家庭成員如何理解彼此的角色，以及遇到變化時誰來接手。提早整理，不代表必須立刻做出所有決定，而是先讓重要問題有地方被看見。" },
+      { type: "image", src: "/images/async/image-4.webp", alt: "家庭檔案、家系線稿與整理中的筆記", caption: "好的傳承討論從家庭現況與期待開始，而不是從一張制式答案開始。" },
+      { type: "h2", text: "先整理四種資訊，再談工具" },
+      { type: "p", text: "第一，盤點資產種類與持有方式；第二，整理家庭成員、照顧責任及重要關係；第三，寫下希望延續的生活安排與價值；第四，列出需要法律、稅務、保險或不動產專業協助核對的問題。這樣的起點能幫助家人把事實、想法和待確認事項分開。" },
+      { type: "quote", text: "先讓全貌被理解，方案才有機會貼近每個家庭的真實需要。", label: "編輯觀點" },
+      { type: "steps", title: "家庭傳承的第一輪整理", items: ["列出主要資產與目前持有者，不需先猜測答案。", "記錄家庭成員的照顧與溝通需求。", "將「已知事實、希望安排、仍待確認」分開。", "邀請相應專業人員核對法令、稅務與執行流程。"] },
+      { type: "callout", text: "個別財產與傳承安排涉及家庭事實、法令與稅務條件；本文僅作一般資訊整理，不構成法律、稅務或投資建議。" },
+      { type: "cta", text: "想從家庭現況開始整理？", label: "預約初步需求討論", href: "/contact" },
+    ],
+  },
+  {
+    slug: "family-asset-inventory", title: "家庭資產盤點：先把散落的資訊放到同一張圖上", excerpt: "不動產、現金、保單與公司持份各有不同流動性與風險；盤點的價值，是看見彼此如何影響家庭目標。", category: "asset-management", tags: ["資產配置", "家庭財務", "風險管理"], date: "2026-09-24", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "桌面上的住宅模型、空白帳冊與家庭資產盤點圖", featured: true,
+    blocks: [
+      { type: "p", text: "家庭資產有時分散在不同帳戶、契約、公司與家庭成員手中。單看其中一項，可能不容易察覺現金流、持有架構與家庭責任之間的牽連。第一步不是追求一個標準比例，而是建立可供家庭討論的共同底圖。" },
+      { type: "image", src: "/images/async/image-2.webp", alt: "住宅模型與資產盤點用的紙本資料", caption: "資產盤點重點在於組成、用途與可動用時點，不只是估值。" },
+      { type: "h2", text: "用四個欄位建立家庭資產地圖" },
+      { type: "steps", title: "每項資產都可先問四件事", items: ["資產類型與持有方式：例如不動產、現金、保單或公司持份。", "主要用途：自住、營運、保障、收入或長期傳承。", "可動用的時間與條件：需要文件、共同決策或其他程序嗎？", "相關風險與責任：貸款、受益人、擔保或家庭共同義務有哪些？"] },
+      { type: "chart", title: "盤點不是比例答案，而是一張討論地圖", caption: "示意圖展示資訊欄位的整理維度，不代表任何家庭的建議配置比例。", bars: [{ label: "持有方式", value: 84, note: "名義與實際使用" }, { label: "流動性", value: 66, note: "可運用時點" }, { label: "家庭目標", value: 72, note: "用途與優先順序" }, { label: "風險責任", value: 58, note: "契約與家庭義務" }] },
+      { type: "p", text: "整理後，把容易變動的資料和需要專業判讀的問題分開標示；例如估值日期、契約條款或稅務處理方式，都應在合適時機由相應專業人員確認。完整底圖能讓下一步的配置、風險管理或傳承討論更有效率。" },
+      { type: "callout", text: "本文為一般性資產管理資訊，圖中數值僅代表資訊整理進度的視覺示意，不是投資比例、績效數據或個別建議。" },
+      { type: "cta", text: "把家庭資產全貌整理得更清楚。", label: "了解資產管理服務", href: "/services/asset-management" },
+    ],
+  },
+  {
+    slug: "retirement-cashflow", title: "退休規劃先談每月現金流，再談資產如何轉換", excerpt: "收入來源、支出節奏與預備金放在同一張時間軸上，能讓退休目標更容易討論與調整。", category: "retirement", tags: ["退休現金流", "醫療長照", "提領策略"], date: "2026-09-10", readMinutes: 8, author: "顧問編輯部", image: "/images/async/image-3.webp", imageAlt: "晨光照進面向花園與遠山的安靜陽台", featured: true,
+    blocks: [
+      { type: "p", text: "退休計畫經常從資產總額開始，但退休生活更直接面對的是每月有哪些收入、哪些支出會隨時間變化，以及遇到醫療或照護需求時，家庭是否有預留選項。先釐清現金流，並不是預測未來，而是建立可以定期回頭檢視的假設。" },
+      { type: "image", src: "/images/async/image-3.webp", alt: "有花園與遠山景色的退休生活陽台", caption: "退休規劃應連結理想生活、收入時點與可能變化。" },
+      { type: "h2", text: "把未來拆成三個時間層次" },
+      { type: "p", text: "先列出日常固定支出與希望保留的生活彈性，再整理可預期的收入來源及開始時間。接著，單獨討論醫療、長照、家庭支持等不確定支出，避免把所有資產都當成隨時可動用的現金。每個假設都可標記更新日期，未來收入或生活目標改變時再調整。" },
+      { type: "chart", title: "退休現金流可以用時間軸理解", caption: "以下是規劃方法示意，沒有採用個人資料、報酬預估或特定提領數字。", bars: [{ label: "近期生活", value: 82, note: "固定與日常支出" }, { label: "中期彈性", value: 62, note: "旅居、家庭支持等" }, { label: "長期照護", value: 48, note: "醫療與照護預備" }] },
+      { type: "quote", text: "現金流規劃是一張會更新的生活地圖，不是一次算完就不再變動的答案。", label: "規劃提醒" },
+      { type: "steps", title: "第一次試算可以先準備", items: ["想像退休後的一般月份與特別月份支出。", "列出各項收入的預計開始時間及可能變動。", "分開設定日常備用與醫療、長照情境。", "找出需要專業確認的稅務、保險或資產提領問題。"] },
+      { type: "callout", text: "本文不提供報酬率、退休金數字或投資商品推薦；實際現金流與提領方式需依個人資產、年齡、稅務與風險狀況評估。" },
+      { type: "cta", text: "從想要的退休生活，開始整理每月現金流。", label: "閱讀退休規劃服務", href: "/services/retirement" },
+    ],
+  },
+  {
+    slug: "marital-property-conversation", title: "婚前與婚後財產安排：先把制度、資產與期待分開談", excerpt: "談財產制度不必從衝突開始；先把資訊與彼此關心的事分開，才能找到適合的專業討論順序。", category: "marital-property", tags: ["婚姻財產", "家庭對話", "權益整理"], date: "2026-08-20", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "象徵家庭安排與溝通的檔案紙張和手寫線稿",
+    blocks: [
+      { type: "p", text: "婚前或婚後談財產，涉及現況、未來責任和雙方對公平的理解。把制度選擇、資產來源、日常財務與家庭保障混在一起時，對話容易變得抽象。先把問題分類，可以讓討論回到可確認的事實，也減少遺漏。" },
+      { type: "h2", text: "先確認三件事：制度、資料、情境" },
+      { type: "steps", title: "整理對話清單", items: ["了解現行法定制度與可選擇方式，並請法律專業人員說明適用條件。", "整理各自的主要資產、負債、持有方式與重要契約。", "討論家庭支出、照護、子女及未來變動等可能情境。", "確認雙方都理解文件的效果、程序與後續更新方式。"] },
+      { type: "quote", text: "安排的目的不是預設關係會改變，而是讓重要權益不必只靠記憶和默契。", label: "編輯觀點" },
+      { type: "p", text: "若涉及剩餘財產分配請求權試算、財產隔離、離婚或繼承情境，資料完整與個別法律判斷都很重要。可先列出想確認的問題，再由律師與稅務、財務顧問依專業分工協助，不宜只憑網路摘要做決定。" },
+      { type: "callout", text: "婚姻財產制度與權利效果須依個案事實及現行法令判斷；本文僅協助整理一般問題，非法律意見。" },
+      { type: "cta", text: "讓家庭財產議題有一個清楚的起點。", label: "了解婚姻財產權益服務", href: "/services/marital-property" },
+    ],
+  },
+  {
+    slug: "insurance-in-family-plan", title: "保險放進家庭資產圖：先看保障目的與受益安排", excerpt: "保單不只是保障金額；保障對象、繳費安排、受益資訊與家庭現金流都值得一併盤點。", category: "insurance", tags: ["保險規劃", "資產盤點", "受益人"], date: "2026-07-16", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "在溫暖桌面整理家庭文件與保單資料",
+    blocks: [
+      { type: "p", text: "家庭保單可能由不同成員、不同時期建立。若只記得保費總額，卻不清楚保障對象、契約角色與受益安排，遇到家庭結構改變時便不容易確認是否仍符合原本目的。先做一份清楚的保單摘要，通常比急著比較商品更實用。" },
+      { type: "h2", text: "保單盤點的五個欄位" },
+      { type: "steps", title: "逐張保單記下", items: ["要保人、被保險人及受益人的角色。", "保障目的與重要給付條件。", "繳費期間、保費來源與家庭現金流影響。", "受益人資料是否仍符合目前家庭狀況。", "哪些條款需要由保險專業人員再說明。"] },
+      { type: "p", text: "受益人變更、保單權利與稅務處理都可能受到契約和個別情況影響。整理資料後，可分別向保險及法律／稅務專業人員確認；不要以為單一欄位的修改就能取代整體傳承安排。" },
+      { type: "callout", text: "本文不推薦特定商品，也不取代保險契約檢視或個人化投保建議。" },
+      { type: "cta", text: "把保障安排放回家庭全貌中檢視。", label: "了解家庭資產管理", href: "/services/asset-management" },
+    ],
+  },
+  {
+    slug: "guardianship-and-executor", title: "意定監護與遺囑執行：提早想好決策與交接", excerpt: "重要的不只是文件，而是未來由誰協助、需要哪些資訊，以及安排如何被理解與執行。", category: "guardianship", tags: ["意定監護", "遺囑執行人", "家庭照護"], date: "2026-06-12", readMinutes: 7, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "象徵交接與家庭安排的檔案、樹枝與整理中的文件",
+    blocks: [
+      { type: "p", text: "當家庭需要面對照護或財產交接時，平常沒有談過的角色安排容易成為壓力來源。意定監護與遺囑執行分別牽涉不同的情境與程序，準備工作可以從信任的人、期待的協助方式與關鍵資料開始。" },
+      { type: "image", src: "/images/async/image-4.webp", alt: "預備家庭交接資訊的檔案與筆記", caption: "文件、資訊保管與家人理解，都是安排能否落實的一部分。" },
+      { type: "h2", text: "把角色和資訊交接一起思考" },
+      { type: "steps", title: "建立可討論的準備清單", items: ["列出希望協助的重要決策類型與自己重視的原則。", "和信任的人確認意願與可承擔的角色。", "盤點重要文件、聯絡窗口與需保護的資訊。", "由律師等專業人員說明文件形式、程序和適用條件。", "定期檢視家庭情況是否改變，並更新需要更新的資訊。"] },
+      { type: "quote", text: "安排得越清楚，交接時越能把心力放在照顧與理解，而不是猜測。", label: "規劃提醒" },
+      { type: "callout", text: "意定監護、遺囑與執行程序涉及法律要件與個別情況，請由律師等相應專業人員提供個案法律意見。" },
+      { type: "cta", text: "討論意願、角色與執行流程。", label: "預約初步諮詢", href: "/contact" },
+    ],
+  },
+  {
+    slug: "gift-planning-calendar", title: "年度贈與安排之前：先建立家庭資金節奏與紀錄", excerpt: "家庭贈與不只是年度數字，也要一併考量資金需求、家庭公平感、文件紀錄與相關申報問題。", category: "tax", tags: ["贈與規劃", "年度安排", "稅務檢視"], date: "2025-12-11", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "家庭資金規劃筆記與整齊文件",
+    blocks: [
+      { type: "p", text: "贈與安排常被簡化成年度期限或單一門檻，但家庭資金需求、受贈人情況、資產種類及相關法令都可能影響討論。與其匆忙完成轉移，不如先建立每年檢視的流程，把意圖、資料與專業確認連在一起。" },
+      { type: "h2", text: "先整理，再確認適用規則" },
+      { type: "steps", title: "年度整理的基本順序", items: ["確認贈與目的、家庭現金需求與預計時點。", "列出資產來源、受贈對象與預計移轉項目。", "保存往來紀錄、契約及必要的資金證明。", "由稅務專業人員依當年度法令與個別事實檢視申報義務。"] },
+      { type: "p", text: "當涉及不動產、跨境資產或多位家庭成員時，可能同時需要稅務、法律、不動產及記帳專業協作。任何數字門檻、期限和申報義務都要依實際年度的有效規定確認，不宜沿用舊文章或自行套用他人的情況。" },
+      { type: "callout", text: "稅法與申報規定可能調整。本文不列出門檻或保證節稅效果，實際申報與安排應以專業人員對當年度法令及個案資料的確認為準。" },
+      { type: "cta", text: "先檢視家庭年度安排與待確認的稅務問題。", label: "了解稅務服務", href: "/services/tax" },
+    ],
+  },
+];
+
+export const categoryBySlug = (slug: string) => categories.find(category => category.slug === slug);
+export const serviceBySlug = (slug: string) => services.find(service => service.slug === slug);
+export const articleBySlug = (slug: string) => articles.find(article => article.slug === slug);
+export const categoryForArticle = (article: BlogArticle) => categoryBySlug(article.category);
+export const articleUrl = (article: BlogArticle) => `/blog/${article.slug}`;
+export const serviceUrl = (service: { slug: string }) => `/services/${service.slug}`;
+
+export function archiveGroups() {
+  const groups = new Map<string, BlogArticle[]>();
+  for (const article of articles) {
+    const key = article.date.slice(0, 7);
+    groups.set(key, [...(groups.get(key) ?? []), article]);
+  }
+  return [...groups.entries()].sort(([a], [b]) => b.localeCompare(a));
+}
+
+export const routeManifest = [
+  { path: "/", title: "傳承與財富顧問誌" },
+  { path: "/blog", title: "文章總覽" },
+  { path: "/blog/:slug", title: "文章詳情" },
+  { path: "/services", title: "顧問服務主題總覽" },
+  { path: "/services/:slug", title: "顧問服務主題" },
+  { path: "/archive", title: "文章歸檔" },
+  { path: "/about", title: "關於顧問誌" },
+  { path: "/contact", title: "預約初步需求討論" },
+];
