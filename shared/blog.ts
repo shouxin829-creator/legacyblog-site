@@ -1,7 +1,11 @@
+/** 清單項目：純文字，或「粗體標籤：說明」。 */
+export type ListItem = string | { label: string; text: string };
+
 export type ContentBlock =
   | { type: "p" | "h2" | "quote" | "callout" | "cta" | "video"; text: string; label?: string; href?: string }
   | { type: "image"; src: string; alt: string; caption: string }
   | { type: "steps"; title: string; items: string[] }
+  | { type: "list"; ordered?: boolean; items: ListItem[] }
   | { type: "chart"; title: string; caption: string; bars: { label: string; value: number; note: string }[] };
 
 export type BlogArticle = {
@@ -20,7 +24,7 @@ export type BlogArticle = {
 };
 
 export const categories = [
-  { slug: "legacy-planning", name: "傳承規劃", eyebrow: "LEGACY", description: "讓家族重要安排有脈絡、有選擇，也有從容交接的方式。" },
+  { slug: "legacy-planning", name: "傳承規劃", eyebrow: "LEGACY", description: "傳承不只是財產如何分配，也包含家庭成員的期待、資產現況與未來照顧安排。本專欄整理家庭溝通、資料盤點與專業協作的準備方向，協助你在討論具體方案前，先看清楚需要面對的問題。涉及法律、稅務或個別資產安排時，仍應依實際情況諮詢相關專業人士。" },
   { slug: "asset-management", name: "資產管理", eyebrow: "ASSETS", description: "從全貌盤點到風險與持有架構，整理家庭資產的長期藍圖。" },
   { slug: "retirement", name: "退休規劃", eyebrow: "RETIREMENT", description: "把退休生活拆解成可討論的現金流、預備金與提領節奏。" },
   { slug: "marital-property", name: "婚姻財產權益", eyebrow: "FAMILY", description: "婚前、婚後到家庭變動，先釐清制度與每個人的重要權益。" },
@@ -64,6 +68,37 @@ export const services = [
 ] as const;
 
 export const articles: BlogArticle[] = [
+  {
+    slug: "family-legacy-conversation-prep", title: "家庭談傳承前先準備什麼？從家庭目標、資產資料到待確認問題", excerpt: "開始討論傳承時，家人往往各自關心不同的事。與其急著決定如何分配，不如先整理家庭目標、資產概況與需要專業確認的問題，讓對話更具體，也減少遺漏重要資訊的機會。", category: "legacy-planning", tags: ["家庭傳承", "家庭溝通", "資產盤點", "傳承準備"], date: "2026-10-29", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "柔和晨光中的家庭檔案、家系線稿與筆記本",
+    blocks: [
+      { type: "p", text: "談到家庭傳承，有些人最先想到的是「將來要留給誰」，有些人則擔心稅務、照顧責任，或家庭成員之間能否取得共識。這些問題彼此相關，卻不一定適合在第一次討論時全部做出決定。" },
+      { type: "p", text: "比較踏實的起點，是先把家庭想達成的目標、目前掌握的資料，以及尚未釐清的疑問分開整理。如此一來，家人比較容易理解彼此在意的事情，也能讓後續與律師、會計師、地政士、記帳士或其他專業人士的討論更聚焦。" },
+      { type: "h2", text: "一、先談期待，不急著談分配" },
+      { type: "p", text: "同一個家庭裡，每個人對「安排得好」的想像可能不同。有人重視公平，有人關心家庭企業或不動產如何延續，也有人優先考量長輩未來的生活與照顧。" },
+      { type: "p", text: "可以先各自思考幾個問題：" },
+      { type: "list", items: ["希望這次討論解決什麼問題？", "對長輩的生活、醫療與照顧，有哪些期待？", "家中是否有需要持續經營的事業、房產或其他重要資產？", "哪些事情目前最需要釐清，哪些可以留待之後討論？"] },
+      { type: "p", text: "先理解彼此的關注點，不代表要立刻同意同一種安排；它的作用是讓家人知道，討論背後真正重視的是什麼。" },
+      { type: "h2", text: "二、把已知資料和待確認事項分開" },
+      { type: "p", text: "家庭對資產狀況的理解，可能來自不同時間、不同文件或不同成員。與其一開始就追求資料完美，不如先記錄目前知道的內容，再標出尚待核實之處。" },
+      { type: "p", text: "可先整理以下項目：" },
+      { type: "list", items: ["資產的大致類型，例如不動產、存款、保單或公司權益", "資產持有人與家庭目前掌握的相關文件", "資產是否有貸款、共同持有或其他需要留意的狀況", "家庭日常支出、照顧責任及未來可能的資金需求", "文件資訊過時、內容不完整或需要專業確認的地方"] },
+      { type: "p", text: "這份清單是討論的起點，不必在家庭會議中公開所有敏感資料；也不應透過一般表單或不安全的通訊方式傳送身分證字號、帳戶資訊等敏感內容。" },
+      { type: "h2", text: "三、先列出問題，再找合適的專業協作" },
+      { type: "p", text: "不同問題可能需要不同專業角色協助。法律文件與權利義務、稅務申報與計算、不動產登記或帳務資訊，不能只靠一份網路文章判斷。" },
+      { type: "p", text: "可以把問題整理成三欄：" },
+      { type: "list", ordered: true, items: [{ label: "家庭內部先討論：", text: "成員期待、照顧分工、溝通方式。" }, { label: "需要補齊資料：", text: "文件、資產資訊、持有狀況或家庭收支。" }, { label: "請專業人士確認：", text: "法律效力、稅務影響、登記或其他依個案而異的問題。" }] },
+      { type: "p", text: "如此可避免把尚未確認的假設當成結論，也能協助不同專業人士了解彼此正在處理的部分。" },
+      { type: "h2", text: "四、安排一次小而明確的家庭對話" },
+      { type: "p", text: "第一次討論不必一次談完所有事情。可以先約定時間、列出一至兩個主題，並由一位家人整理待辦事項。若討論容易引發壓力，也可先分別了解各人的想法，再考慮是否需要中立的第三方協助。" },
+      { type: "p", text: "會後簡單記錄三件事即可：" },
+      { type: "list", items: ["已經取得共識的部分", "還需要補充資料或再討論的部分", "下一步由誰負責、預計何時處理"] },
+      { type: "p", text: "重要安排通常需要隨家庭狀況、資產與需求變化而檢視。留下清楚的討論紀錄，有助於之後回顧，也減少不同家人對先前決定的理解落差。" },
+      { type: "h2", text: "把「想清楚」放在「急著決定」之前" },
+      { type: "p", text: "傳承規劃沒有適用所有家庭的單一答案。從家庭目標、現況資料與待確認問題開始，能讓後續討論更清楚，也讓專業建議建立在較完整的背景上。" },
+      { type: "p", text: "若你正準備與家人談傳承，可以先整理目前最在意的兩三個問題，再依需要尋求相關專業協助。本文為一般教育資訊，不構成法律、稅務、投資或保險建議；個別安排請依實際情況向合格專業人士確認。" },
+      { type: "cta", text: "想把家庭目標與待確認問題整理成下一步？", label: "了解傳承規劃服務", href: "/services/legacy-planning" },
+    ],
+  },
   {
     slug: "family-asset-inventory-checklist", title: "家庭資產盤點實用清單：整理不動產、現金、保單與公司資產", excerpt: "提供家庭可參考的資產盤點清單，從資料準備、欄位設計到不同資產類型的核對與更新，讓重要資訊更容易查找、交接與維護。", category: "asset-management", tags: ["家庭資產", "資產盤點", "不動產", "保單管理", "公司資產"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "桌面上的住宅模型、空白帳冊與家庭資產盤點圖",
     blocks: [

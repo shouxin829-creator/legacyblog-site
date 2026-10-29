@@ -257,6 +257,12 @@ h1 em,h2 em { color: #8f7950; font-style: normal; }
 .article-main-column { min-width: 0; }
 .article-content { color: #42433e; font-size: 18px; line-height: 1.95; letter-spacing: .015em; }
 .article-content > p { margin: 0 0 26px; }
+.article-list { margin: 0 0 1.4em; padding-left: 1.3em; list-style: disc; }
+ol.article-list { list-style: decimal; }
+.article-list li { padding: 3px 0; }
+.article-list li::marker { color: var(--gold); }
+.article-list strong { color: var(--ink); font-weight: 600; }
+.category-intro { max-width: 680px; margin: 16px 0 0; color: #66665f; font-size: 16px; line-height: 1.95; }
 .article-content h2 { margin: 43px 0 17px; color: var(--ink); font-family: var(--serif); font-size: 25px; font-weight: 500; line-height: 1.7; }
 .article-content h3 { font-family: var(--serif); font-weight: 500; }
 .article-figure,.chart-block,.video-block { margin: 34px 0; }

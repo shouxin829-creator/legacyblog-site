@@ -32,6 +32,10 @@ function renderBlock(block: ContentBlock): string {
     case "quote": return `<blockquote><p>${esc(block.text)}</p>${block.label ? `<cite>${esc(block.label)}</cite>` : ""}</blockquote>`;
     case "image": return `<figure>${image(block.src, block.alt)}<figcaption>${esc(block.caption)}</figcaption></figure>`;
     case "steps": return `<section class="seo-steps"><h3>${esc(block.title)}</h3><ol>${block.items.map(item => `<li>${esc(item)}</li>`).join("")}</ol></section>`;
+    case "list": {
+      const tag = block.ordered ? "ol" : "ul";
+      return `<${tag}>${block.items.map(item => `<li>${typeof item === "string" ? esc(item) : `<strong>${esc(item.label)}</strong>${esc(item.text)}`}</li>`).join("")}</${tag}>`;
+    }
     case "chart": return `<figure class="seo-chart"><h3>${esc(block.title)}</h3><ul>${block.bars.map(bar => `<li><span>${esc(bar.label)}</span><span class="seo-bar"><i style="width:${Math.max(0, Math.min(100, bar.value))}%"></i></span><small>${esc(bar.note)}</small></li>`).join("")}</ul><figcaption>${esc(block.caption)}</figcaption></figure>`;
     case "callout": return `<aside class="seo-callout">${esc(block.text)}</aside>`;
     case "cta": return `<aside class="seo-cta"><p>${esc(block.text)}</p><a href="${esc(block.href ?? "/contact")}">${esc(block.label ?? "進一步了解")}　↗</a></aside>`;
@@ -73,7 +77,7 @@ function servicePage(slug: string): Page | undefined {
   const titleText = service?.title ?? `從${category?.name}開始，找到清楚的下一步。`;
   const summary = service?.summary ?? category?.description ?? "依家庭實際議題整理可以開始的下一步。";
   const offerings = service?.offerings ?? [];
-  const body = `<main id="main-content" class="seo-page"><nav class="seo-breadcrumb"><a href="/">首頁</a>　／　<a href="/services">顧問服務</a>　／　${esc(category?.name ?? "服務主題")}</nav><section class="seo-service-hero"><p class="seo-eyebrow">${esc(service?.eyebrow ?? category?.eyebrow ?? "主題指南")}　／　服務主題</p><h1>${esc(titleText)}</h1><p class="seo-lead">${esc(summary)}</p><a class="seo-more" href="/contact">帶著你的問題，預約初步討論　↗</a></section>${offerings.length ? `<section><h2>服務內容</h2><ul class="seo-offerings">${offerings.map(item => `<li>${esc(item)}</li>`).join("")}</ul></section>` : ""}<section><h2>相關專欄</h2><div class="seo-cards">${related.map(articleCard).join("")}</div></section><section class="seo-collaboration"><h2>依主題邀請合適的專業協作</h2><p>顧問服務可搭配律師、會計師、地政士（代書）與記帳士等合作專業，依個別議題與需要安排；資格與法律、稅務判斷由相應專業人員確認。</p><a href="/contact">說明你的初步需求　↗</a></section></main>`;
+  const body = `<main id="main-content" class="seo-page"><nav class="seo-breadcrumb"><a href="/">首頁</a>　／　<a href="/services">顧問服務</a>　／　${esc(category?.name ?? "服務主題")}</nav><section class="seo-service-hero"><p class="seo-eyebrow">${esc(service?.eyebrow ?? category?.eyebrow ?? "主題指南")}　／　服務主題</p><h1>${esc(titleText)}</h1><p class="seo-lead">${esc(summary)}</p><a class="seo-more" href="/contact">帶著你的問題，預約初步討論　↗</a></section>${offerings.length ? `<section><h2>服務內容</h2><ul class="seo-offerings">${offerings.map(item => `<li>${esc(item)}</li>`).join("")}</ul></section>` : ""}<section><h2>相關專欄</h2>${service && category?.description ? `<p>${esc(category.description)}</p>` : ""}<div class="seo-cards">${related.map(articleCard).join("")}</div></section><section class="seo-collaboration"><h2>依主題邀請合適的專業協作</h2><p>顧問服務可搭配律師、會計師、地政士（代書）與記帳士等合作專業，依個別議題與需要安排；資格與法律、稅務判斷由相應專業人員確認。</p><a href="/contact">說明你的初步需求　↗</a></section></main>`;
   const description = `${summary}${offerings.slice(0, 2).join("、")}。從家庭實際需要出發，整理相關文章、服務方向及需要由相應專業人員核對的事項。`;
   return { title: `${category?.name ?? "服務主題"}｜傳承與財富顧問誌｜家庭長期規劃與跨專業服務實用指南`, description, keywords: [category?.name ?? "顧問服務", ...offerings.slice(0, 4), "家庭長期規劃", "跨專業協作"], body, schema: { "@context": "https://schema.org", "@type": "Service", name: category?.name, description, provider: { "@type": "Organization", name: "傳承與財富顧問誌" } } };
 }
