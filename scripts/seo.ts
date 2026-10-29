@@ -9,11 +9,6 @@ const dateLabel = (date: string) => new Date(`${date}T12:00:00`).toLocaleDateStr
 import { SITE_URL } from "@shared/site";
 const DEFAULT_SHARE_IMAGE = "/images/image-4_4d47d3df.jpg";
 const DEFAULT_SHARE_IMAGE_ALT = "柔和晨光中的家庭檔案、家系線稿與筆記本";
-const SOCIAL_IMAGE_BY_COVER: Record<string, string> = {
-  "/images/async/image-2.webp": "/images/image-2_3a5707a2.jpg",
-  "/images/async/image-3.webp": "/images/image-3_85f4f464.jpg",
-  "/images/async/image-4.webp": "/images/image-4_4d47d3df.jpg",
-};
 const origin = () => SITE_URL.replace(/\/+$/, "");
 
 type Page = { title: string; description: string; keywords: string[]; type?: "website" | "article"; body: string; schema?: Record<string, unknown>; image?: string; imageAlt?: string; articlePublishedAt?: string; articleSection?: string; articleTags?: string[]; notFound?: boolean };
@@ -168,7 +163,7 @@ function documentHtml(page: Page, path: string) {
   const canonical = absolute ? `<link rel="canonical" href="${esc(`${absolute}${path}`)}" />` : "";
   const urlMeta = absolute ? `<meta property="og:url" content="${esc(`${absolute}${path}`)}" />` : "";
   const coverJpg = page.image?.startsWith("/images/covers/") ? page.image.replace(/\.webp$/, ".jpg") : undefined;
-  const imagePath = page.image ? (coverJpg ?? SOCIAL_IMAGE_BY_COVER[page.image] ?? page.image) : DEFAULT_SHARE_IMAGE;
+  const imagePath = page.image ? (coverJpg ?? page.image) : DEFAULT_SHARE_IMAGE;
   const [imageWidth, imageHeight] = coverJpg ? [1536, 1024] : [1920, 1280];
   const imageAlt = page.imageAlt ?? DEFAULT_SHARE_IMAGE_ALT;
   const imageUrl = absolute ? new URL(imagePath, absolute).toString() : "";

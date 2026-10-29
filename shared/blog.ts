@@ -180,7 +180,6 @@ export const articles: BlogArticle[] = [
     slug: "family-legacy-planning", title: "家族傳承，不必等到申報那一天才開始", excerpt: "傳承規劃真正的起點，是先理解家庭成員、資產位置與彼此期待，再安排需要跨專業討論的問題。", category: "legacy-planning", tags: ["傳承架構", "家庭對話", "遺囑規劃"], date: "2026-10-08", readMinutes: 7, author: "顧問編輯部", image: "/images/covers/family-legacy-planning.webp", imageAlt: "舊木書桌上的老相簿、懷錶與一束白色小花", featured: true,
     blocks: [
       { type: "p", text: "談到傳承，許多人第一個想到的是稅務申報。但真正影響安排能否順利落實的，往往還包括資產分散在哪裡、家庭成員如何理解彼此的角色，以及遇到變化時誰來接手。提早整理，不代表必須立刻做出所有決定，而是先讓重要問題有地方被看見。" },
-      { type: "image", src: "/images/async/image-4.webp", alt: "家庭檔案、家系線稿與整理中的筆記", caption: "好的傳承討論從家庭現況與期待開始，而不是從一張制式答案開始。" },
       { type: "h2", text: "先整理四種資訊，再談工具" },
       { type: "p", text: "第一，盤點資產種類與持有方式；第二，整理家庭成員、照顧責任及重要關係；第三，寫下希望延續的生活安排與價值；第四，列出需要法律、稅務、保險或不動產專業協助核對的問題。這樣的起點能幫助家人把事實、想法和待確認事項分開。" },
       { type: "quote", text: "先讓全貌被理解，方案才有機會貼近每個家庭的真實需要。", label: "編輯觀點" },
@@ -193,7 +192,6 @@ export const articles: BlogArticle[] = [
     slug: "family-asset-inventory", title: "家庭資產盤點：先把散落的資訊放到同一張圖上", excerpt: "不動產、現金、保單與公司持份各有不同流動性與風險；盤點的價值，是看見彼此如何影響家庭目標。", category: "asset-management", tags: ["資產配置", "家庭財務", "風險管理"], date: "2026-09-24", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/family-asset-inventory.webp", imageAlt: "白紙上以細線連起的房屋模型、硬幣與空白卡片", featured: true,
     blocks: [
       { type: "p", text: "家庭資產有時分散在不同帳戶、契約、公司與家庭成員手中。單看其中一項，可能不容易察覺現金流、持有架構與家庭責任之間的牽連。第一步不是追求一個標準比例，而是建立可供家庭討論的共同底圖。" },
-      { type: "image", src: "/images/async/image-2.webp", alt: "住宅模型與資產盤點用的紙本資料", caption: "資產盤點重點在於組成、用途與可動用時點，不只是估值。" },
       { type: "h2", text: "用四個欄位建立家庭資產地圖" },
       { type: "steps", title: "每項資產都可先問四件事", items: ["資產類型與持有方式：例如不動產、現金、保單或公司持份。", "主要用途：自住、營運、保障、收入或長期傳承。", "可動用的時間與條件：需要文件、共同決策或其他程序嗎？", "相關風險與責任：貸款、受益人、擔保或家庭共同義務有哪些？"] },
       { type: "chart", title: "盤點不是比例答案，而是一張討論地圖", caption: "示意圖展示資訊欄位的整理維度，不代表任何家庭的建議配置比例。", bars: [{ label: "持有方式", value: 84, note: "名義與實際使用" }, { label: "流動性", value: 66, note: "可運用時點" }, { label: "家庭目標", value: 72, note: "用途與優先順序" }, { label: "風險責任", value: 58, note: "契約與家庭義務" }] },
@@ -206,7 +204,6 @@ export const articles: BlogArticle[] = [
     slug: "retirement-cashflow", title: "退休規劃先談每月現金流，再談資產如何轉換", excerpt: "收入來源、支出節奏與預備金放在同一張時間軸上，能讓退休目標更容易討論與調整。", category: "retirement", tags: ["退休現金流", "醫療長照", "提領策略"], date: "2026-09-10", readMinutes: 8, author: "顧問編輯部", image: "/images/covers/retirement-cashflow.webp", imageAlt: "晨光中的陽台藤椅、咖啡與遠方山景", featured: true,
     blocks: [
       { type: "p", text: "退休計畫經常從資產總額開始，但退休生活更直接面對的是每月有哪些收入、哪些支出會隨時間變化，以及遇到醫療或照護需求時，家庭是否有預留選項。先釐清現金流，並不是預測未來，而是建立可以定期回頭檢視的假設。" },
-      { type: "image", src: "/images/async/image-3.webp", alt: "有花園與遠山景色的退休生活陽台", caption: "退休規劃應連結理想生活、收入時點與可能變化。" },
       { type: "h2", text: "把未來拆成三個時間層次" },
       { type: "p", text: "先列出日常固定支出與希望保留的生活彈性，再整理可預期的收入來源及開始時間。接著，單獨討論醫療、長照、家庭支持等不確定支出，避免把所有資產都當成隨時可動用的現金。每個假設都可標記更新日期，未來收入或生活目標改變時再調整。" },
       { type: "chart", title: "退休現金流可以用時間軸理解", caption: "以下是規劃方法示意，沒有採用個人資料、報酬預估或特定提領數字。", bars: [{ label: "近期生活", value: 82, note: "固定與日常支出" }, { label: "中期彈性", value: 62, note: "旅居、家庭支持等" }, { label: "長期照護", value: 48, note: "醫療與照護預備" }] },
@@ -243,7 +240,6 @@ export const articles: BlogArticle[] = [
     slug: "guardianship-and-executor", title: "意定監護與遺囑執行：提早想好決策與交接", excerpt: "重要的不只是文件，而是未來由誰協助、需要哪些資訊，以及安排如何被理解與執行。", category: "guardianship", tags: ["意定監護", "遺囑執行人", "家庭照護"], date: "2026-06-12", readMinutes: 7, author: "顧問編輯部", image: "/images/covers/guardianship-and-executor.webp", imageAlt: "木盒裡的蠟封信封、小鑰匙與空白卡片",
     blocks: [
       { type: "p", text: "當家庭需要面對照護或財產交接時，平常沒有談過的角色安排容易成為壓力來源。意定監護與遺囑執行分別牽涉不同的情境與程序，準備工作可以從信任的人、期待的協助方式與關鍵資料開始。" },
-      { type: "image", src: "/images/async/image-4.webp", alt: "預備家庭交接資訊的檔案與筆記", caption: "文件、資訊保管與家人理解，都是安排能否落實的一部分。" },
       { type: "h2", text: "把角色和資訊交接一起思考" },
       { type: "steps", title: "建立可討論的準備清單", items: ["列出希望協助的重要決策類型與自己重視的原則。", "和信任的人確認意願與可承擔的角色。", "盤點重要文件、聯絡窗口與需保護的資訊。", "由律師等專業人員說明文件形式、程序和適用條件。", "定期檢視家庭情況是否改變，並更新需要更新的資訊。"] },
       { type: "quote", text: "安排得越清楚，交接時越能把心力放在照顧與理解，而不是猜測。", label: "規劃提醒" },
