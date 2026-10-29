@@ -167,11 +167,13 @@ function documentHtml(page: Page, path: string) {
   const absolute = origin();
   const canonical = absolute ? `<link rel="canonical" href="${esc(`${absolute}${path}`)}" />` : "";
   const urlMeta = absolute ? `<meta property="og:url" content="${esc(`${absolute}${path}`)}" />` : "";
-  const imagePath = page.image ? (SOCIAL_IMAGE_BY_COVER[page.image] ?? page.image) : DEFAULT_SHARE_IMAGE;
+  const coverJpg = page.image?.startsWith("/images/covers/") ? page.image.replace(/\.webp$/, ".jpg") : undefined;
+  const imagePath = page.image ? (coverJpg ?? SOCIAL_IMAGE_BY_COVER[page.image] ?? page.image) : DEFAULT_SHARE_IMAGE;
+  const [imageWidth, imageHeight] = coverJpg ? [1536, 1024] : [1920, 1280];
   const imageAlt = page.imageAlt ?? DEFAULT_SHARE_IMAGE_ALT;
   const imageUrl = absolute ? new URL(imagePath, absolute).toString() : "";
   const imageMime = imagePath.toLowerCase().endsWith(".webp") ? "image/webp" : imagePath.toLowerCase().endsWith(".png") ? "image/png" : "image/jpeg";
-  const imageMeta = imageUrl ? `<meta property="og:image" content="${esc(imageUrl)}"/><meta property="og:image:secure_url" content="${esc(imageUrl)}"/><meta property="og:image:type" content="${imageMime}"/><meta property="og:image:width" content="1920"/><meta property="og:image:height" content="1280"/><meta property="og:image:alt" content="${esc(imageAlt)}"/><meta name="twitter:image" content="${esc(imageUrl)}"/><meta name="twitter:image:alt" content="${esc(imageAlt)}"/>` : "";
+  const imageMeta = imageUrl ? `<meta property="og:image" content="${esc(imageUrl)}"/><meta property="og:image:secure_url" content="${esc(imageUrl)}"/><meta property="og:image:type" content="${imageMime}"/><meta property="og:image:width" content="${imageWidth}"/><meta property="og:image:height" content="${imageHeight}"/><meta property="og:image:alt" content="${esc(imageAlt)}"/><meta name="twitter:image" content="${esc(imageUrl)}"/><meta name="twitter:image:alt" content="${esc(imageAlt)}"/>` : "";
   const articleMeta = page.type === "article" ? `${page.articlePublishedAt ? `<meta property="article:published_time" content="${esc(page.articlePublishedAt)}"/>` : ""}${page.articleSection ? `<meta property="article:section" content="${esc(page.articleSection)}"/>` : ""}${(page.articleTags ?? []).map(tag => `<meta property="article:tag" content="${esc(tag)}"/>`).join("")}` : "";
   const schema = articleSchemaFromPage(page, path);
   const jsonLd = `<link rel="icon" type="image/svg+xml" href="/brand-mark.svg"/>${schema ? `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>` : ""}${breadcrumbJsonLd(path)}`;

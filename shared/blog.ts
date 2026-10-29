@@ -69,7 +69,7 @@ export const services = [
 
 export const articles: BlogArticle[] = [
   {
-    slug: "family-legacy-conversation-prep", title: "家庭談傳承前先準備什麼？從家庭目標、資產資料到待確認問題", excerpt: "開始討論傳承時，家人往往各自關心不同的事。與其急著決定如何分配，不如先整理家庭目標、資產概況與需要專業確認的問題，讓對話更具體，也減少遺漏重要資訊的機會。", category: "legacy-planning", tags: ["家庭傳承", "家庭溝通", "資產盤點", "傳承準備"], date: "2026-10-29", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "柔和晨光中的家庭檔案、家系線稿與筆記本",
+    slug: "family-legacy-conversation-prep", title: "家庭談傳承前先準備什麼？從家庭目標、資產資料到待確認問題", excerpt: "開始討論傳承時，家人往往各自關心不同的事。與其急著決定如何分配，不如先整理家庭目標、資產概況與需要專業確認的問題，讓對話更具體，也減少遺漏重要資訊的機會。", category: "legacy-planning", tags: ["家庭傳承", "家庭溝通", "資產盤點", "傳承準備"], date: "2026-10-29", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/family-legacy-conversation-prep.webp", imageAlt: "木桌上攤開的空白筆記本、鋼筆與三杯茶",
     blocks: [
       { type: "p", text: "談到家庭傳承，有些人最先想到的是「將來要留給誰」，有些人則擔心稅務、照顧責任，或家庭成員之間能否取得共識。這些問題彼此相關，卻不一定適合在第一次討論時全部做出決定。" },
       { type: "p", text: "比較踏實的起點，是先把家庭想達成的目標、目前掌握的資料，以及尚未釐清的疑問分開整理。如此一來，家人比較容易理解彼此在意的事情，也能讓後續與律師、會計師、地政士、記帳士或其他專業人士的討論更聚焦。" },
@@ -100,7 +100,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "family-asset-inventory-checklist", title: "家庭資產盤點實用清單：整理不動產、現金、保單與公司資產", excerpt: "提供家庭可參考的資產盤點清單，從資料準備、欄位設計到不同資產類型的核對與更新，讓重要資訊更容易查找、交接與維護。", category: "asset-management", tags: ["家庭資產", "資產盤點", "不動產", "保單管理", "公司資產"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "桌面上的住宅模型、空白帳冊與家庭資產盤點圖",
+    slug: "family-asset-inventory-checklist", title: "家庭資產盤點實用清單：整理不動產、現金、保單與公司資產", excerpt: "提供家庭可參考的資產盤點清單，從資料準備、欄位設計到不同資產類型的核對與更新，讓重要資訊更容易查找、交接與維護。", category: "asset-management", tags: ["家庭資產", "資產盤點", "不動產", "保單管理", "公司資產"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/covers/family-asset-inventory-checklist.webp", imageAlt: "整齊排列的牛皮紙檔案夾、舊鑰匙、小冊子與計算機",
     blocks: [
       { type: "p", text: "盤點不是把資料堆在一起，而是建立一份家人找得到、看得懂、需要時能交接的清冊。本篇提供可套用的欄位與流程，整理不動產、現金、保單及公司資產。" },
       { type: "h2", text: "先把盤點範圍切小" },
@@ -119,7 +119,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "legacy-planning-first-meeting", title: "傳承規劃從哪開始？先整理家庭目標與待確認事項", excerpt: "第一次談傳承，不必急著做決定；先把家人的期待、目前掌握的資料與仍待釐清的問題分開整理，讓後續討論更有方向，也方便專業人士接續協作。", category: "legacy-planning", tags: ["傳承規劃", "家庭溝通", "資料整理", "專業協作"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "柔和晨光中的家庭檔案、家系線稿與筆記本",
+    slug: "legacy-planning-first-meeting", title: "傳承規劃從哪開始？先整理家庭目標與待確認事項", excerpt: "第一次談傳承，不必急著做決定；先把家人的期待、目前掌握的資料與仍待釐清的問題分開整理，讓後續討論更有方向，也方便專業人士接續協作。", category: "legacy-planning", tags: ["傳承規劃", "家庭溝通", "資料整理", "專業協作"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/covers/legacy-planning-first-meeting.webp", imageAlt: "皮革記事本上的空白便條紙、眼鏡與一杯熱茶",
     blocks: [
       { type: "p", text: "第一次家人討論傳承，重點不是當場決定誰拿什麼，而是建立可理解、可修正的共同起點。先約不被打斷的時間，說明這次只做盤點與提問，不預設答案，也不把沉默當同意；議題敏感時，先約定發言順序與保密範圍。" },
       { type: "h2", text: "先把期待說清楚" },
@@ -137,7 +137,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "retirement-cashflow-checklist", title: "退休現金流怎麼規劃？整理收入、支出與預備金清單", excerpt: "把家庭退休後的收入起點、支出類型、醫療長照預備與待確認假設放進同一份表，定期更新，讓討論更具體、調整更有依據。", category: "retirement", tags: ["退休規劃", "現金流", "家庭理財", "醫療長照", "預備金"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-3.webp", imageAlt: "晨光照進面向花園與遠山的安靜陽台",
+    slug: "retirement-cashflow-checklist", title: "退休現金流怎麼規劃？整理收入、支出與預備金清單", excerpt: "把家庭退休後的收入起點、支出類型、醫療長照預備與待確認假設放進同一份表，定期更新，讓討論更具體、調整更有依據。", category: "retirement", tags: ["退休規劃", "現金流", "家庭理財", "醫療長照", "預備金"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/covers/retirement-cashflow-checklist.webp", imageAlt: "窗邊圓桌上攤開的收支簿、鉛筆與小盆栽",
     blocks: [
       { type: "h2", text: "先定義整理表的範圍" },
       { type: "p", text: "先以家庭為單位，決定這份表要涵蓋哪些人、哪些帳戶與哪些生活安排。每一筆資料都標註來源、估計或已確認的狀態、更新日期，以及由誰負責補充。表格的目的不是做出一次性的預測，而是把收入、支出與風險放在同一個畫面，方便家人定期討論。" },
@@ -156,7 +156,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "guardianship-long-term-care-conversation", title: "意定監護與長照準備：家人可先討論的四件事", excerpt: "從照護偏好、信任分工、資訊交接到資金與家庭支持，家人可趁狀態穩定時把重要想法說開，讓未來協助更貼近本人意願。", category: "guardianship", tags: ["意定監護", "長照準備", "家庭對話", "照護安排"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "象徵照護意願與家庭安排的文件和手寫筆記",
+    slug: "guardianship-long-term-care-conversation", title: "意定監護與長照準備：家人可先討論的四件事", excerpt: "從照護偏好、信任分工、資訊交接到資金與家庭支持，家人可趁狀態穩定時把重要想法說開，讓未來協助更貼近本人意願。", category: "guardianship", tags: ["意定監護", "長照準備", "家庭對話", "照護安排"], date: "2026-10-19", readMinutes: 5, author: "顧問編輯部", image: "/images/covers/guardianship-long-term-care-conversation.webp", imageAlt: "長輩的手輕握年輕家人的手，放在針織毯上",
     blocks: [
       { type: "p", text: "談意定監護，不只是在文件上安排一個名字，更重要的是先理解本人希望怎樣生活、誰能在需要時陪伴，以及家人如何分擔。趁彼此狀態穩定時開口，目的不是預設最壞情況，而是把尊重與選擇留在家庭討論裡。" },
       { type: "h2", text: "一、先談照護偏好：什麼樣的日子算安心？" },
@@ -177,7 +177,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "family-legacy-planning", title: "家族傳承，不必等到申報那一天才開始", excerpt: "傳承規劃真正的起點，是先理解家庭成員、資產位置與彼此期待，再安排需要跨專業討論的問題。", category: "legacy-planning", tags: ["傳承架構", "家庭對話", "遺囑規劃"], date: "2026-10-08", readMinutes: 7, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "柔和晨光中的家庭檔案、家系線稿與筆記本", featured: true,
+    slug: "family-legacy-planning", title: "家族傳承，不必等到申報那一天才開始", excerpt: "傳承規劃真正的起點，是先理解家庭成員、資產位置與彼此期待，再安排需要跨專業討論的問題。", category: "legacy-planning", tags: ["傳承架構", "家庭對話", "遺囑規劃"], date: "2026-10-08", readMinutes: 7, author: "顧問編輯部", image: "/images/covers/family-legacy-planning.webp", imageAlt: "舊木書桌上的老相簿、懷錶與一束白色小花", featured: true,
     blocks: [
       { type: "p", text: "談到傳承，許多人第一個想到的是稅務申報。但真正影響安排能否順利落實的，往往還包括資產分散在哪裡、家庭成員如何理解彼此的角色，以及遇到變化時誰來接手。提早整理，不代表必須立刻做出所有決定，而是先讓重要問題有地方被看見。" },
       { type: "image", src: "/images/async/image-4.webp", alt: "家庭檔案、家系線稿與整理中的筆記", caption: "好的傳承討論從家庭現況與期待開始，而不是從一張制式答案開始。" },
@@ -190,7 +190,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "family-asset-inventory", title: "家庭資產盤點：先把散落的資訊放到同一張圖上", excerpt: "不動產、現金、保單與公司持份各有不同流動性與風險；盤點的價值，是看見彼此如何影響家庭目標。", category: "asset-management", tags: ["資產配置", "家庭財務", "風險管理"], date: "2026-09-24", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "桌面上的住宅模型、空白帳冊與家庭資產盤點圖", featured: true,
+    slug: "family-asset-inventory", title: "家庭資產盤點：先把散落的資訊放到同一張圖上", excerpt: "不動產、現金、保單與公司持份各有不同流動性與風險；盤點的價值，是看見彼此如何影響家庭目標。", category: "asset-management", tags: ["資產配置", "家庭財務", "風險管理"], date: "2026-09-24", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/family-asset-inventory.webp", imageAlt: "白紙上以細線連起的房屋模型、硬幣與空白卡片", featured: true,
     blocks: [
       { type: "p", text: "家庭資產有時分散在不同帳戶、契約、公司與家庭成員手中。單看其中一項，可能不容易察覺現金流、持有架構與家庭責任之間的牽連。第一步不是追求一個標準比例，而是建立可供家庭討論的共同底圖。" },
       { type: "image", src: "/images/async/image-2.webp", alt: "住宅模型與資產盤點用的紙本資料", caption: "資產盤點重點在於組成、用途與可動用時點，不只是估值。" },
@@ -203,7 +203,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "retirement-cashflow", title: "退休規劃先談每月現金流，再談資產如何轉換", excerpt: "收入來源、支出節奏與預備金放在同一張時間軸上，能讓退休目標更容易討論與調整。", category: "retirement", tags: ["退休現金流", "醫療長照", "提領策略"], date: "2026-09-10", readMinutes: 8, author: "顧問編輯部", image: "/images/async/image-3.webp", imageAlt: "晨光照進面向花園與遠山的安靜陽台", featured: true,
+    slug: "retirement-cashflow", title: "退休規劃先談每月現金流，再談資產如何轉換", excerpt: "收入來源、支出節奏與預備金放在同一張時間軸上，能讓退休目標更容易討論與調整。", category: "retirement", tags: ["退休現金流", "醫療長照", "提領策略"], date: "2026-09-10", readMinutes: 8, author: "顧問編輯部", image: "/images/covers/retirement-cashflow.webp", imageAlt: "晨光中的陽台藤椅、咖啡與遠方山景", featured: true,
     blocks: [
       { type: "p", text: "退休計畫經常從資產總額開始，但退休生活更直接面對的是每月有哪些收入、哪些支出會隨時間變化，以及遇到醫療或照護需求時，家庭是否有預留選項。先釐清現金流，並不是預測未來，而是建立可以定期回頭檢視的假設。" },
       { type: "image", src: "/images/async/image-3.webp", alt: "有花園與遠山景色的退休生活陽台", caption: "退休規劃應連結理想生活、收入時點與可能變化。" },
@@ -217,7 +217,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "marital-property-conversation", title: "婚前與婚後財產安排：先把制度、資產與期待分開談", excerpt: "談財產制度不必從衝突開始；先把資訊與彼此關心的事分開，才能找到適合的專業討論順序。", category: "marital-property", tags: ["婚姻財產", "家庭對話", "權益整理"], date: "2026-08-20", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "象徵家庭安排與溝通的檔案紙張和手寫線稿",
+    slug: "marital-property-conversation", title: "婚前與婚後財產安排：先把制度、資產與期待分開談", excerpt: "談財產制度不必從衝突開始；先把資訊與彼此關心的事分開，才能找到適合的專業討論順序。", category: "marital-property", tags: ["婚姻財產", "家庭對話", "權益整理"], date: "2026-08-20", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/marital-property-conversation.webp", imageAlt: "空白文件上並排的兩只婚戒與兩支鋼筆",
     blocks: [
       { type: "p", text: "婚前或婚後談財產，涉及現況、未來責任和雙方對公平的理解。把制度選擇、資產來源、日常財務與家庭保障混在一起時，對話容易變得抽象。先把問題分類，可以讓討論回到可確認的事實，也減少遺漏。" },
       { type: "h2", text: "先確認三件事：制度、資料、情境" },
@@ -229,7 +229,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "insurance-in-family-plan", title: "保險放進家庭資產圖：先看保障目的與受益安排", excerpt: "保單不只是保障金額；保障對象、繳費安排、受益資訊與家庭現金流都值得一併盤點。", category: "insurance", tags: ["保險規劃", "資產盤點", "受益人"], date: "2026-07-16", readMinutes: 5, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "在溫暖桌面整理家庭文件與保單資料",
+    slug: "insurance-in-family-plan", title: "保險放進家庭資產圖：先看保障目的與受益安排", excerpt: "保單不只是保障金額；保障對象、繳費安排、受益資訊與家庭現金流都值得一併盤點。", category: "insurance", tags: ["保險規劃", "資產盤點", "受益人"], date: "2026-07-16", readMinutes: 5, author: "顧問編輯部", image: "/images/covers/insurance-in-family-plan.webp", imageAlt: "雨傘下的房屋模型與整齊疊放的文件",
     blocks: [
       { type: "p", text: "家庭保單可能由不同成員、不同時期建立。若只記得保費總額，卻不清楚保障對象、契約角色與受益安排，遇到家庭結構改變時便不容易確認是否仍符合原本目的。先做一份清楚的保單摘要，通常比急著比較商品更實用。" },
       { type: "h2", text: "保單盤點的五個欄位" },
@@ -240,7 +240,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "guardianship-and-executor", title: "意定監護與遺囑執行：提早想好決策與交接", excerpt: "重要的不只是文件，而是未來由誰協助、需要哪些資訊，以及安排如何被理解與執行。", category: "guardianship", tags: ["意定監護", "遺囑執行人", "家庭照護"], date: "2026-06-12", readMinutes: 7, author: "顧問編輯部", image: "/images/async/image-4.webp", imageAlt: "象徵交接與家庭安排的檔案、樹枝與整理中的文件",
+    slug: "guardianship-and-executor", title: "意定監護與遺囑執行：提早想好決策與交接", excerpt: "重要的不只是文件，而是未來由誰協助、需要哪些資訊，以及安排如何被理解與執行。", category: "guardianship", tags: ["意定監護", "遺囑執行人", "家庭照護"], date: "2026-06-12", readMinutes: 7, author: "顧問編輯部", image: "/images/covers/guardianship-and-executor.webp", imageAlt: "木盒裡的蠟封信封、小鑰匙與空白卡片",
     blocks: [
       { type: "p", text: "當家庭需要面對照護或財產交接時，平常沒有談過的角色安排容易成為壓力來源。意定監護與遺囑執行分別牽涉不同的情境與程序，準備工作可以從信任的人、期待的協助方式與關鍵資料開始。" },
       { type: "image", src: "/images/async/image-4.webp", alt: "預備家庭交接資訊的檔案與筆記", caption: "文件、資訊保管與家人理解，都是安排能否落實的一部分。" },
@@ -252,7 +252,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "gift-planning-calendar", title: "年度贈與安排之前：先建立家庭資金節奏與紀錄", excerpt: "家庭贈與不只是年度數字，也要一併考量資金需求、家庭公平感、文件紀錄與相關申報問題。", category: "tax", tags: ["贈與規劃", "年度安排", "稅務檢視"], date: "2025-12-11", readMinutes: 6, author: "顧問編輯部", image: "/images/async/image-2.webp", imageAlt: "家庭資金規劃筆記與整齊文件",
+    slug: "gift-planning-calendar", title: "年度贈與安排之前：先建立家庭資金節奏與紀錄", excerpt: "家庭贈與不只是年度數字，也要一併考量資金需求、家庭公平感、文件紀錄與相關申報問題。", category: "tax", tags: ["贈與規劃", "年度安排", "稅務檢視"], date: "2025-12-11", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/gift-planning-calendar.webp", imageAlt: "半開的牛皮紙信封、空白桌曆與金色鋼筆",
     blocks: [
       { type: "p", text: "贈與安排常被簡化成年度期限或單一門檻，但家庭資金需求、受贈人情況、資產種類及相關法令都可能影響討論。與其匆忙完成轉移，不如先建立每年檢視的流程，把意圖、資料與專業確認連在一起。" },
       { type: "h2", text: "先整理，再確認適用規則" },
