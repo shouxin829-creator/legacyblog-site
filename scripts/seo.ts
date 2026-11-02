@@ -31,6 +31,7 @@ function renderBlock(block: ContentBlock): string {
       const tag = block.ordered ? "ol" : "ul";
       return `<${tag}>${block.items.map(item => `<li>${typeof item === "string" ? esc(item) : `<strong>${esc(item.label)}</strong>${esc(item.text)}`}</li>`).join("")}</${tag}>`;
     }
+    case "table": return `<table><thead><tr>${block.headers.map(header => `<th scope="col">${esc(header)}</th>`).join("")}</tr></thead><tbody>${block.rows.map(row => `<tr>${row.map((cell, c) => c === 0 ? `<th scope="row">${esc(cell)}</th>` : `<td>${esc(cell)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
     case "chart": return `<figure class="seo-chart"><h3>${esc(block.title)}</h3><ul>${block.bars.map(bar => `<li><span>${esc(bar.label)}</span><span class="seo-bar"><i style="width:${Math.max(0, Math.min(100, bar.value))}%"></i></span><small>${esc(bar.note)}</small></li>`).join("")}</ul><figcaption>${esc(block.caption)}</figcaption></figure>`;
     case "callout": return `<aside class="seo-callout">${esc(block.text)}</aside>`;
     case "cta": return `<aside class="seo-cta"><p>${esc(block.text)}</p><a href="${esc(block.href ?? "/contact")}">${esc(block.label ?? "進一步了解")}　↗</a></aside>`;
