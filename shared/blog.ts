@@ -70,7 +70,7 @@ export const services = [
 
 export const articles: BlogArticle[] = [
   {
-    slug: "retirement-healthcare-long-term-care-preparation", title: "退休後的醫療與長照預備金怎麼準備？先盤點需求與可用資源", excerpt: "醫療與長照需求可能因健康狀況、照護方式與家庭支持而不同，難以用單一金額概括。退休前可先整理可能的照護情境、家庭可用資源、保險保障與待確認問題，讓家庭有更多時間討論與調整。", category: "retirement", tags: ["醫療預備金", "長照準備", "退休規劃", "家庭照護"], date: "2026-11-02", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/retirement-cashflow-checklist.webp", imageAlt: "窗邊圓桌上攤開的收支簿、鉛筆與小盆栽",
+    slug: "retirement-healthcare-long-term-care-preparation", title: "退休後的醫療與長照預備金怎麼準備？先盤點需求與可用資源", excerpt: "醫療與長照需求可能因健康狀況、照護方式與家庭支持而不同，難以用單一金額概括。退休前可先整理可能的照護情境、家庭可用資源、保險保障與待確認問題，讓家庭有更多時間討論與調整。", category: "retirement", tags: ["醫療預備金", "長照準備", "退休規劃", "家庭照護"], date: "2026-11-02", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/retirement-healthcare-long-term-care-preparation.webp", imageAlt: "窗邊小茶几上的藥盒、一杯水、筆記本與老花眼鏡，旁邊是搭著針織毯的扶手椅",
     blocks: [
       { type: "p", text: "退休規劃常從每月收入與生活費開始，但如果未來健康狀況改變，家庭還可能需要面對醫療、照顧服務、居住環境調整或家人陪伴時間等安排。這些需求因人而異，也會隨家庭狀況改變；與其急著訂出一個通用金額，不如先整理「可能需要什麼」以及「目前有哪些可用資源」。" },
       { type: "h2", text: "先想像幾種可能的照護情境" },
@@ -99,7 +99,7 @@ export const articles: BlogArticle[] = [
     ],
   },
   {
-    slug: "will-executor-preparation-checklist", title: "遺囑執行人要先準備什麼？從人選溝通到文件交接", excerpt: "遺囑執行相關安排，除了確認人選，也要讓對方了解你的想法、知道重要文件的位置，並事先釐清哪些程序須由律師或其他專業人士確認。本文整理可用來準備家庭對話的清單。", category: "executor", tags: ["遺囑執行人", "遺囑準備", "家庭溝通", "文件整理"], date: "2026-11-02", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/guardianship-and-executor.webp", imageAlt: "木盒裡的蠟封信封、小鑰匙與空白卡片",
+    slug: "will-executor-preparation-checklist", title: "遺囑執行人要先準備什麼？從人選溝通到文件交接", excerpt: "遺囑執行相關安排，除了確認人選，也要讓對方了解你的想法、知道重要文件的位置，並事先釐清哪些程序須由律師或其他專業人士確認。本文整理可用來準備家庭對話的清單。", category: "executor", tags: ["遺囑執行人", "遺囑準備", "家庭溝通", "文件整理"], date: "2026-11-02", readMinutes: 6, author: "顧問編輯部", image: "/images/covers/will-executor-preparation-checklist.webp", imageAlt: "用細繩綁好的一疊文件、空白索引卡與鋼筆，旁邊是木製文件盒",
     blocks: [
       { type: "p", text: "談到遺囑，有人會先思考內容，也有人會關心日後由誰協助處理相關事務。無論家庭目前進度如何，與人選溝通及整理資料，都能讓後續討論更清楚。" },
       { type: "p", text: "遺囑執行人的資格、指定方式、權限與實際程序，可能受適用法律及個案情況影響。以下內容是一般準備清單，不是法律意見；重要安排應由律師依實際資料確認。" },
